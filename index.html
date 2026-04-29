@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Reset Rituals. Self-care for getting through it and for shutting it down. Mood steamers, gentle scrubs, and recovery creams for your AM and PM rituals.">
+    <meta name="author" content="Ruby Hassan">
+    <title>Reset Rituals. | For Getting Through It. For Shutting It Down.</title>
+    <link rel="icon" type="image/png" href="images/logo_pm.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.min.js" defer></script>
+</head>
+<body>
+
+    <header id="top">
+        <a href="#top" id="logoLink">
+            <img src="images/logo_full_am.png" alt="Reset Rituals" id="siteLogo">
+        </a>
+        <nav id="mainNav">
+            <h2 class="sr-only">Main Navigation</h2>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#game">Play</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <section id="themeControls">
+            <h2 class="sr-only">Theme</h2>
+            <button id="lightBtn" type="button" class="activeTheme">Light</button>
+            <button id="darkBtn" type="button">Dark</button>
+        </section>
+    </header>
+
+    <main>
+
+        <section id="hero">
+            <div id="heroOverlay">
+                <h1>For Getting Through It & For Shutting It Down.</h1>
+                <a href="#products" id="heroBtn">Explore Rituals</a>
+            </div>
+        </section>
+
+        <section id="products">
+            <h2>Find Your Ritual</h2>
+            <p>Choose your mode. Discover the products built for it.</p>
+
+            <section id="modeSwitch">
+                <h3 class="sr-only">Choose Your Mode</h3>
+                <button id="amBtn" type="button" class="activeMode">Low Power Mode</button>
+                <button id="pmBtn" type="button">Do Not Disturb</button>
+            </section>
+
+            <section id="productControls">
+                <h3 class="sr-only">Select a Product</h3>
+                <button id="steamerBtn" type="button" class="activeProduct">Mood Steamer</button>
+                <button id="scrubBtn" type="button">Gentle Scrub</button>
+                <button id="creamBtn" type="button">Recovery Cream</button>
+            </section>
+
+            <section id="steamerAM" class="productCard currentItem">
+                <img src="images/steamer_am.png" alt="Start Anyway Mood Steamer jar on a yellow background">
+                <h3>Start Anyway Mood Steamer</h3>
+                <p class="scent">Citrus Mint &middot; Eucalyptus</p>
+                <p class="desc">A refreshing steam blend designed to help you start gently, even when your energy runs low.</p>
+            </section>
+
+            <section id="scrubAM" class="productCard hiddenItem">
+                <img src="images/scrub_am.png" alt="Damage Control Gentle Scrub jar on a yellow background">
+                <h3>Damage Control Gentle Scrub</h3>
+                <p class="scent">Grapefruit &middot; Ginger</p>
+                <p class="desc">A revitalizing scrub that helps reset your skin and your mindset after a long day.</p>
+            </section>
+
+            <section id="creamAM" class="productCard hiddenItem">
+                <img src="images/cream_am.png" alt="Please Hold Hand Cream jar on a yellow background">
+                <h3>Please Hold Hand Cream</h3>
+                <p class="scent">Lemon &middot; Basil</p>
+                <p class="desc">A lightweight, calming cream for the moments when you need to pause and regroup.</p>
+            </section>
+
+            <section id="steamerPM" class="productCard hiddenItem">
+                <img src="images/steamer_pm.png" alt="Do It Later Mood Steamer jar on a navy background">
+                <h3>Do It Later Mood Steamer</h3>
+                <p class="scent">Cedarwood &middot; Sage</p>
+                <p class="desc">A grounding steam blend that helps you disconnect, slow down, and finally unwind.</p>
+            </section>
+
+            <section id="scrubPM" class="productCard hiddenItem">
+                <img src="images/scrub_pm.png" alt="Out of Range Gentle Scrub jar on a navy background">
+                <h3>Out of Range Gentle Scrub</h3>
+                <p class="scent">Lavender &middot; Chamomile</p>
+                <p class="desc">A soothing scrub designed to release tension and ease you into deep relaxation.</p>
+            </section>
+
+            <section id="creamPM" class="productCard hiddenItem">
+                <img src="images/cream_pm.png" alt="Offline for the Night Cream jar on a navy background">
+                <h3>Offline for the Night Cream</h3>
+                <p class="scent">Vanilla &middot; Sandalwood</p>
+                <p class="desc">A rich recovery cream that supports deep rest, restoration, and morning glow.</p>
+            </section>
+        </section>
+
+        <section id="game">
+            <h2>Daily Reset Drawing</h2>
+            <p class="gameSub">Pick a number from 1 to 10.</p>
+            <p class="gameSub">Match ours and you&rsquo;re entered into our launch giveaway.</p>
+
+            <form id="gameForm">
+                <label for="numGuess">Your Guess (1 to 10)</label>
+                <span class="message" id="guessMsg">Please enter a whole number from 1 to 10.</span>
+                <input type="number" name="numGuess" id="numGuess" min="1" max="10">
+                <input type="submit" id="playBtn" value="Try your luck!">
+            </form>
+
+            <section id="gameResults">
+                <h3 class="sr-only">Results</h3>
+                <ul id="gameOutput">
+                    <li id="userNum"><span>&ndash;</span>Your Guess</li>
+                    <li id="randomNum"><span>&ndash;</span>Winning Number</li>
+                </ul>
+                <p id="gameMsg">Take a guess to play.</p>
+            </section>
+        </section>
+
+        <section id="about">
+            <img src="images/logo_am.png" alt="Reset Rituals icon" id="aboutLogo">
+            <h2>About Reset Rituals</h2>
+            <p>Reset Rituals was built on a simple idea. Self-care isn&rsquo;t one mood. Some days you need to power through. Other days you need to shut it all down.</p>
+            <p>Every product is split into two modes. Low Power Mode for getting through it, and Do Not Disturb for shutting it down. Your routine, ready to meet you wherever you are.</p>
+            <p>No hustle culture. No wellness performance. Just rituals that fit your day.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Questions or feedback? We&rsquo;d love to hear from you.</p>
+
+            <form id="contactForm" novalidate>
+                <label for="fullName">Full Name</label>
+                <input type="text" name="fullName" id="fullName">
+                <span class="message" id="nameMsg">Please enter your first and last name.</span>
+
+                <fieldset id="contactPref">
+                    <legend>Preferred Contact Method</legend>
+                    <div class="radioRow">
+                        <input type="radio" name="prefContact" id="prefPhone" value="phone" checked>
+                        <label for="prefPhone">Phone</label>
+                        <input type="radio" name="prefContact" id="prefEmail" value="email">
+                        <label for="prefEmail">Email</label>
+                    </div>
+                    <span class="message" id="prefMsg">Please choose a contact method.</span>
+                </fieldset>
+
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email">
+                <span class="message" id="emailMsg">Please enter a valid email address.</span>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" id="phone">
+                <span class="message" id="phoneMsg">Please enter a valid 10 digit phone number.</span>
+
+                <label for="comments">Comments</label>
+                <textarea name="comments" id="comments" rows="5"></textarea>
+                <span class="message" id="commentsMsg">Please leave a comment.</span>
+
+                <input type="submit" id="submitBtn" value="Send Message">
+            </form>
+
+            <section id="formSuccess" class="hiddenItem">
+                <h3>Thank you for reaching out.</h3>
+                <p id="successMsg"></p>
+            </section>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Reset Rituals.</p>
+        <nav id="footerNav">
+            <h2 class="sr-only">Footer Navigation</h2>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#game">Play</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>

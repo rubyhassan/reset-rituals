@@ -1,6 +1,7 @@
 /* RESET RITUALS — STYLESHEET
-   GIT 519 Final Project
-   Author: Ruby Hassan */
+    GIT 519 Final Project
+    Author: Ruby Hassan
+    Assets: All images, logos, labels, and product mockups were created by the author for Reset Rituals. */
 
 
 /* FONT IMPORTS */
@@ -122,7 +123,7 @@ p {
 ::selection { background: var(--ink); color: var(--bg-page); }
 
 
-/* SHARED UI TEXT (buttons, nav, labels) */
+/* UI TEXT (buttons, nav, labels) */
 .uiText, #mainNav a, #footerNav a, #themeControls button,
 #modeSwitch button, #productControls button, #heroBtn,
 #playBtn, #submitBtn, footer p,
@@ -138,7 +139,7 @@ p {
 /* HEADER */
 header {
     background-color: var(--bg-page);
-    padding: 1.5rem 4rem;
+    padding: 0 4rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
@@ -146,10 +147,13 @@ header {
     max-width: var(--max-width);
     margin: 0 auto;
     border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 #siteLogo {
-    height: 66px;
+    height: 60px;
     width: auto;
 }
 
@@ -173,12 +177,12 @@ header {
     gap: 0.25rem;
     border: 1px solid var(--border);
     border-radius: 999px;
-    padding: 0.25rem;
+    padding: 0.1875rem;
 }
 #themeControls button {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     color: var(--ink);
-    padding: 0.5rem 1.1rem;
+    padding: 0.5rem 1.75rem;
     border-radius: 999px;
     transition: all 0.3s ease;
 }
@@ -210,6 +214,7 @@ main {
 #heroOverlay {
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -263,12 +268,12 @@ main {
     border: 1px solid var(--border);
     border-radius: 999px;
     padding: 0.375rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
 }
 #modeSwitch button {
     font-size: 0.75rem;
     color: var(--ink);
-    padding: 0.85rem 1.75rem;
+    padding: 0.75rem 2.5rem;
     border-radius: 999px;
     transition: all 0.3s ease;
 }
@@ -282,7 +287,7 @@ main {
     grid-template-columns: repeat(3, 200px);
     gap: 0.75rem;
     justify-content: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
 }
 #productControls button {
     font-size: 0.75rem;
@@ -292,6 +297,7 @@ main {
     border-radius: 999px;
     background-color: transparent;
     transition: all 0.25s ease;
+    max-width: 200px;
 }
 #productControls button:hover { border-color: var(--ink); }
 #productControls button.activeProduct {
@@ -306,7 +312,10 @@ main {
     max-width: 520px;
     margin: 0 auto;
     text-align: center;
-    animation: ease-in-out;
+}
+
+.productCard.currentItem h3{
+    animation: fadeIn 0.4s ease-in-out;
 }
 
 .productCard img {
@@ -329,15 +338,17 @@ main {
 
 .productCard .scent {
     display: inline-block;
+    width: 380px;
     background-color: var(--highlight-bg);
     color: var(--highlight-text);
     font-family: var(--font-display);
     font-size: 1.125rem;
     font-style: italic;
     font-weight: 400;
-    padding: 0.4rem 8rem;
-    margin-bottom: 1.5rem;
+    padding: 0.26rem 0;
+    margin: 0 auto 1rem;
     border-radius: 2px;
+    text-align: center;
 }
 
 .productCard .desc {
@@ -345,7 +356,7 @@ main {
     line-height: 1.75;
     color: var(--ink-soft);
     margin: 0 auto;
-    max-width: 44ch;
+    max-width: 32ch;
 }
 
 .hiddenItem { display: none; }
@@ -556,13 +567,41 @@ body.dark #contactForm textarea:focus { border-color: var(--yellow); }
     gap: 2rem;
     align-items: center;
 }
+
 #contactPref input[type="radio"] {
-    width: auto;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
     margin-right: 0.5rem;
-    accent-color: var(--ink);
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    background-color: var(--bg-form);
     cursor: pointer;
+    position: relative;
+    vertical-align: middle;
 }
-body.dark #contactPref input[type="radio"] { accent-color: var(--yellow); }
+
+#contactPref input[type="radio"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--ink);
+}
+
+body.dark #contactPref input[type="radio"] {
+    border-color: var(--yellow);
+    background-color: var(--bg-form);
+}
+
+body.dark #contactPref input[type="radio"]:checked::after {
+    background-color: var(--yellow);
+}
 
 #contactPref .radioRow label {
     display: inline;
@@ -640,14 +679,20 @@ body.dark #submitBtn {
     font-size: 0.95rem;
     line-height: 1.85;
 }
-#formSuccess p strong {
+#formSuccess .successLine {
+    margin-bottom: 0.75rem;
+}
+#formSuccess .successLine:last-child {
+    margin-bottom: 0;
+}
+#formSuccess strong {
     font-family: var(--font-ui);
     font-size: 0.7rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--ink);
     display: block;
-    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
 }
 
 

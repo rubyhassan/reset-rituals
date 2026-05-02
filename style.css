@@ -153,8 +153,10 @@ header {
 }
 
 #siteLogo {
-    height: 60px;
+    height: 80px;
     width: auto;
+    margin-left: 1.5rem;
+    margin-right: 3.1rem;
 }
 
 #mainNav ul {
